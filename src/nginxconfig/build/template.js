@@ -30,7 +30,11 @@ const fs = require('fs');
 // Fetch the posthtml template and convert it to an ejs template
 const main = () => {
     const buildDir = path.join(__dirname, '..', '..', '..', 'build');
-    let template = fs.readFileSync(path.join(buildDir, 'base.html'), 'utf8');
+    try {
+        fs.mkdirSync(buildDir);
+    } catch (e) {
+    }
+    let template = fs.readFileSync(path.join(buildDir, '../src/', 'base.html'), 'utf8');
 
     // Inject our title now
     template = template.replace('<block name="title"><title>DigitalOcean</title></block>', '<title>NGINXConfig | DigitalOcean</title>');

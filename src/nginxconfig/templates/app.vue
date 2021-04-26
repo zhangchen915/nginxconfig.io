@@ -87,8 +87,6 @@ THE SOFTWARE.
                     <h2>{{ $t('templates.app.globalConfig') }}</h2>
                     <Global :data="global"></Global>
 
-                    <DropletCallout></DropletCallout>
-
                     <h2>{{ $t('templates.app.setup') }}</h2>
                     <Setup :data="{ domains: domains.filter(d => d !== null), global, confFiles }"></Setup>
                 </div>
@@ -112,7 +110,6 @@ THE SOFTWARE.
         </div>
 
         <Footer></Footer>
-        <ContributeCallout></ContributeCallout>
     </div>
 </template>
 
@@ -137,8 +134,8 @@ THE SOFTWARE.
 
     import Domain from './domain';
     import Global from './global';
-    import DropletCallout from './callouts/droplet';
-    import ContributeCallout from './callouts/contribute';
+    // import DropletCallout from './callouts/droplet';
+    // import ContributeCallout from './callouts/contribute';
     import Setup from './setup';
     import Footer from './footer';
 
@@ -152,8 +149,6 @@ THE SOFTWARE.
             Footer,
             Domain,
             Global,
-            DropletCallout,
-            ContributeCallout,
             Setup,
             NginxPrism,
             YamlPrism: () => import('./prism/yaml'),
