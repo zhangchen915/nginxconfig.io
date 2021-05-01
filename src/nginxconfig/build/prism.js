@@ -24,19 +24,19 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-const fs = require('fs').promises;
-const path = require('path');
-const fetch = require('node-fetch');
-
-const main = async () => {
-    const resp = await fetch('https://assets.digitalocean.com/prism/prism.css');
-    const text = await resp.text();
-
-    // Fix $676767 -> #676767
-    const fixed = text.replace(/:\s*\$((?:[0-9a-fA-F]{3}){1,2});/g, ':#$1;');
-
-    const buildDir = path.join(__dirname, '..', '..', '..', 'build');
-    await fs.writeFile(path.join(buildDir, 'prism.css'), fixed);
-};
-
-main().then(() => {});
+// const fs = require('fs').promises;
+// const path = require('path');
+// const fetch = require('node-fetch');
+//
+// const main = async () => {
+//     const resp = await fetch('https://assets.digitalocean.com/prism/prism.css');
+//     const text = await resp.text();
+//
+//     // Fix $676767 -> #676767
+//     const fixed = text.replace(/:\s*\$((?:[0-9a-fA-F]{3}){1,2});/g, ':#$1;');
+//
+//     const buildDir = path.join(__dirname, '..', '..', '..', 'build');
+//     await fs.writeFile(path.join(buildDir, 'prism.css'), fixed);
+// };
+//
+// main().then(() => {});

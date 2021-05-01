@@ -30,8 +30,6 @@ $callout: #f3f5f9;
 @import "~do-bulma/src/style";
 
 .do-bulma {
-  //@import "../../../build/prism";
-
   $pretty--color-dark: $primary;
   $pretty--color-default: $primary;
   @import "~pretty-checkbox/src/pretty-checkbox";
@@ -53,4 +51,13 @@ $callout: #f3f5f9;
   @import "code";
   @import "files";
   @import "footer";
+}
+
+.do-bulma .number{
+  display: initial;
+  background: initial;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
 }

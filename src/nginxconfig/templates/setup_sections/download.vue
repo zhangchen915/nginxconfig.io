@@ -30,8 +30,7 @@ THE SOFTWARE.
             <li>
                 <p>
                     <span v-html="$t('templates.setupSections.download.downloadTheGeneratedConfig')"></span>
-                    <b>&nbsp;<a @click="$parent.downloadTar">{{ $parent.tarName }}</a></b>
-                    <br />
+                    <b>&nbsp;<a @click="$parent.downloadTar">{{ $parent.tarName }} </a></b>
                     <span v-html="$t('templates.setupSections.download.andUploadItToYourServers')"></span>
                     <code class="slim">{{ $props.data.global.nginx.nginxConfigDirectory.computed }}</code>
                     {{ $t('templates.setupSections.download.directory') }}
