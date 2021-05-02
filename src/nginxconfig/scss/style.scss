@@ -27,7 +27,46 @@ THE SOFTWARE.
 $header: #0071fe;
 $highlight: #f2c94c;
 $callout: #f3f5f9;
-@import "~do-bulma/src/style";
+//@import "~do-bulma/src/style";
+
+@import "~do-bulma/src/globals/variables";
+//@import "~do-bulma/src/globals/fonts";
+
+@mixin font-regular {
+  font-family: $regular-font-family;
+  font-weight: $regular-font-weight;
+}
+
+@mixin font-bold {
+  font-family: $bold-font-family;
+  font-weight: $bold-font-weight;
+}
+
+@mixin font-medium {
+  font-family: $medium-font-family;
+  font-weight: $medium-font-weight;
+}
+
+@import "~do-bulma/src/globals/base";
+
+.do-bulma {
+  @import "~bulma/bulma";
+  @import "~do-bulma/src/components/base";
+  @import "~do-bulma/src/components/typography";
+  @import "~do-bulma/src/components/header";
+  //@import "~do-bulma/src/components/landing";
+  @import "~do-bulma/src/components/buttons";
+  @import "~do-bulma/src/components/forms";
+  //@import "~do-bulma/src/components/tables";
+  @import "~do-bulma/src/components/footer";
+  @import "~do-bulma/src/components/modals";
+  //@import "~do-bulma/src/components/message";
+  //@import "~do-bulma/src/components/tags";
+  //@import "~do-bulma/src/components/skeletons";
+  @import "~do-bulma/src/components/panels";
+  //@import "~do-bulma/src/components/bars";
+  @import "~do-bulma/src/components/tabs";
+}
 
 .do-bulma {
   $pretty--color-dark: $primary;

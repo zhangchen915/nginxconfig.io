@@ -36,9 +36,6 @@ const main = () => {
     }
     let template = fs.readFileSync(path.join(buildDir, '../src/', 'base.html'), 'utf8');
 
-    // Inject our title now
-    template = template.replace('<block name="title"><title>DigitalOcean</title></block>', '<title>NGINXConfig | DigitalOcean</title>');
-
     // We don't need the head/script blocks, vue-cli-service handles those
     template = template.replace('<block name="head"></block>', '');
     template = template.replace('<block name="script"></block>', '');
