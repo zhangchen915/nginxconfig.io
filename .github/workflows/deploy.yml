@@ -24,12 +24,11 @@ jobs:
           NODE_ENV: development
           CI: true
 
-      - name: Deploy to Server
-        uses: easingthemes/ssh-deploy@v2.1.6
-        env:
-          REMOTE_HOST: ${{ secrets.HOST }}
-          SSH_PRIVATE_KEY: ${{ secrets.TOKEN }}
-          ARGS: "-avzr --delete"
-          SOURCE: "dist/"
-          REMOTE_USER: "ubuntu"
-          TARGET: "/var/www/nginx.scholar.run"
+      - name: Upload COS
+        uses: zkqiang/tencent-cos-action@v0.1.0
+        with:
+          args: upload -rs --skipmd5 ./dist/ /
+          secret_id: ${{ secrets.SECRET_ID }}
+          secret_key: ${{ secrets.SECRET_KEY }}
+          bucket: ${{ secrets.BUCKET }}
+          region: ap-beijing
